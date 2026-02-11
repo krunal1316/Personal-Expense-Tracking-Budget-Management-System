@@ -1,0 +1,257 @@
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: -250px;
+    /* Hidden by default */
+    background-color: #2c3e50;
+    /* Dark sidebar */
+    color: white;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open {
+    left: 0;
+}
+
+.sidebar-header {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ecf0f1;
+}
+
+.sidebar-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.sidebar-links li {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: #bdc3c7;
+    display: block;
+    transition: 0.3s;
+    cursor: pointer;
+    border-bottom: 1px solid #34495e;
+}
+
+.sidebar-links li:hover {
+    color: #f1f1f1;
+    background-color: #34495e;
+}
+
+.sidebar-links li i {
+    margin-right: 10px;
+    width: 25px;
+    text-align: center;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    background-color: #1abc9c;
+    color: white;
+    text-align: center;
+}
+
+.sidebar-toggle {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #2c3e50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1100;
+    /* Above sidebar */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-toggle:hover {
+    background-color: #34495e;
+}
+
+/* Details Modal Styles */
+.details-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease;
+}
+
+.details-modal {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.details-header h2 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.close-details-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #7f8c8d;
+}
+
+.close-details-btn:hover {
+    color: #2c3e50;
+}
+
+.summary-section {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-item span {
+    font-size: 0.8rem;
+    color: #7f8c8d;
+}
+
+.detail-item strong {
+    font-size: 1.1rem;
+    margin-top: 5px;
+}
+
+.detail-item.income strong {
+    color: var(--success, #2ecc71);
+}
+
+.detail-item.expense strong {
+    color: var(--danger, #e74c3c);
+}
+
+.detail-item.balance strong {
+    color: var(--info, #3498db);
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+.category-item span:first-child {
+    font-weight: 500;
+}
+
+.category-item .text-success {
+    color: var(--success, #2ecc71);
+}
+
+.category-item .text-danger {
+    color: var(--danger, #e74c3c);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Calendar Month Selector */
+.month-selector-container {
+    margin-bottom: 20px;
+    text-align: center;
+    background: #f1f2f6;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.month-input {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-left: 10px;
+    outline: none;
+    cursor: pointer;
+}
+
+.month-input:focus {
+    border-color: #3498db;
+}
+
+.no-data-msg {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+    margin-top: 20px;
+}
